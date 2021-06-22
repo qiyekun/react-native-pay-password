@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Image, TouchableHighlight, Dimensions, StyleSheet, } from 'react-native';
-import { constants } from '../util';
 const KeyboardItem = (props) => {
     const { type = 'num', value, style = [], numStyle, onPress = () => { }, } = props;
     return (<TouchableHighlight style={[styles.keyboardItem, ...style]} underlayColor={''} onPress={onPress}>
@@ -71,7 +70,7 @@ const Keyboard = (props) => {
             return (<View style={[styles.itemView, props.rowStyle]} key={i}>
                 {items.map((item, j) => {
                     const withBorder = Math.round(items.length / 2) === j + 1;
-                    return (<KeyboardItem key={`${i}-${j}`} type={item.type} value={item.value} style={[withBorder ? styles.border : {}, item.numStyle || {}]} onPress={() => { onPress(item); }} />);
+                    return (<KeyboardItem key={`${i}-${j}`} type={item.type} value={item.value} style={[withBorder ? styles.border : {}, item.numStyle || {}, j == 2 ? { marginRight: 0 } : {}]} onPress={() => { onPress(item); }} />);
                 })}
             </View>);
         })}
@@ -83,21 +82,25 @@ const styles = StyleSheet.create({
     },
     itemView: {
         flexDirection: 'row',
-        borderTopWidth: 4,
-        borderTopColor: '#000102',
+        // borderTopWidth: 4,
+        // borderTopColor: '#000102',
+        paddingHorizontal: 8
     },
     keyboardItem: {
         flex: 1,
+        marginRight: 5,
         height: 46,
         backgroundColor: '#feffff',
         alignItems: 'center',
         justifyContent: 'center',
+        width: 100,
+        borderRadius: 4.5
     },
     border: {
-        borderLeftWidth: 4,
-        borderLeftColor: '#000102',
-        borderRightWidth: 4,
-        borderRightColor: '#000102',
+        // borderLeftWidth: 4,
+        // borderLeftColor: '#000102',
+        // borderRightWidth: 4,
+        // borderRightColor: '#000102',
     },
     text: {
         fontSize: 22,
