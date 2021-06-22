@@ -9,7 +9,7 @@ import {
   TextProps
 } from 'react-native';
 import InputView, { InputViewProps } from './InputView';
-import Keyboard, { KeyboardProps } from './Keyboard';
+import Keyboard from './Keyboard';
 import { constants } from '../util';
 
 export interface PasswordModalProps {
@@ -30,7 +30,7 @@ export interface PasswordModalProps {
   /** password input function component props */
   inputViewProps?: Partial<InputViewProps>;
   /** keyborad function component props */
-  keyboardProps?: Partial<KeyboardProps>;
+  keyboardProps?: Partial<any>;
 }
 
 export interface PasswordModalRef {

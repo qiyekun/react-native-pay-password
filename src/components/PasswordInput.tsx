@@ -6,7 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 import InputView, { InputViewProps } from './InputView';
-import Keyboard, { KeyboardProps } from './Keyboard';
+import Keyboard from './Keyboard';
 
 export interface PasswordInputProps {
   /** clear password value when press the password input */
@@ -16,7 +16,7 @@ export interface PasswordInputProps {
   /** password input function component props */
   inputViewProps?: Partial<InputViewProps>;
   /** keyborad function component props */
-  keyboardProps?: Partial<KeyboardProps>;
+  keyboardProps?: Partial<any>;
 }
 
 export interface PasswordInputRef {
