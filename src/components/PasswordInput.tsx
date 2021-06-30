@@ -34,7 +34,7 @@ const PasswordInput = React.forwardRef((props: PasswordInputProps, ref: React.Re
 
   const [password, setPassword] = React.useState('');
 
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = React.useState(true);
 
   const combineText = (text) => {
     const len = inputViewProps.length || 6;
